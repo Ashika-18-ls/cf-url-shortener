@@ -1,0 +1,19 @@
+{
+  "name": "url-shortener-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker backend for a serverless URL shortener (free-tier, no credit card required).",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create url-shortener-db",
+    "db:migrate": "wrangler d1 execute url-shortener-db --file=./schema.sql",
+    "db:migrate:remote": "wrangler d1 execute url-shortener-db --remote --file=./schema.sql",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  },
+  "license": "MIT"
+}

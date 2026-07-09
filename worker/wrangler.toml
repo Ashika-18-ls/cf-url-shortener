@@ -1,0 +1,23 @@
+# wrangler.toml — Cloudflare Worker configuration
+# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "url-shortener-worker"
+main = "index.js"
+compatibility_date = "2024-11-01"
+
+# ---------------------------------------------------------------------------
+# D1 Database binding
+# After running `wrangler d1 create url-shortener-db`, copy the
+# database_id it prints into the value below.
+# ---------------------------------------------------------------------------
+[[d1_databases]]
+binding = "DB"                     # accessible in code as env.DB
+database_name = "url-shortener-db"
+database_id = "ef111596-3818-4463-9d44-10706731446f"
+
+# ---------------------------------------------------------------------------
+# Optional: custom route (only needed if you attach a custom domain)
+# [[routes]]
+# pattern = "short.yourdomain.com/*"
+# zone_name = "yourdomain.com"
+# ---------------------------------------------------------------------------
